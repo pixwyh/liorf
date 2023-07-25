@@ -32,12 +32,17 @@ Video：[基于LIO-SAM框架SLAM算法开发系列视频](https://space.bilibili
 
 1. Run the launch file:
   ```
-    roslaunch liorf run_kitti.launch
+     roslaunch liorf run_lio_sam_rs.launch 
   ```
 
 2. Play existing bag files:
   ```
     rosbag play kitti_2011_09_30_drive_0018_synced.bag
+  ```
+3. After data playback is complete, export PCD point cloud data:
+  ```
+   rosservice call /liorf/save_map "resolution: 0.0
+   destination: ''" 
   ```
 
 ## For fusion gps factor
